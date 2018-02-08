@@ -62,7 +62,18 @@
   window.addEventListener('keydown', function (e) {
   	// console.log(e.keyCode);
 
+	  //data-key is the attribute selector for the audio
+	  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+
+	  //if there's no audio (!bang audio), stop the function from running all together
+	  if(!audio) return;
+
+	  //rewind to the start so sound will repeat upon each key down
+	  audio.currentTime = 0;
+	  audio.play();
   });
+
+  //left off at 8:50 in the video: https://courses.wesbos.com/account/access/5a7bb7684ea3f06ee903804b/view/194130650
 </script>
 
 
